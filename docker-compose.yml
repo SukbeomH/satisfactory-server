@@ -10,11 +10,11 @@ services:
         volumes:
             # - /volume5/docker/satisfactory/config:/config
             - ./config:/config
-        # platform: linux/amd64
+        platform: linux/amd64
         environment:
             - MAXPLAYERS=4
-            - PGID=100
-            - PUID=1026
+            # - PGID=100
+            # - PUID=1026
             - STEAMBETA=false
             - AUTOPAUSE=false
             - AUTOSAVEINTERVAL=300
@@ -25,4 +25,4 @@ services:
             limits:
               memory: 30G
             reservations:
-              memory: 16G
+              memory: 10G

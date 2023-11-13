@@ -1,15 +1,7 @@
-# FROM cm2network/steamcmd:latest
 FROM cm2network/steamcmd:root
 
-# RUN set -x \
-#  && apt-get update \
-#  && DEBIAN_FRONTEND=noninteractive apt-get install -y gosu xdg-user-dirs --no-install-recommends\
-#  && rm -rf /var/lib/apt/lists/* \
-#  && useradd -ms /bin/bash steam \
-#  && gosu nobody true
-
-RUN mkdir -p /config \
- && chown steam:steam /config
+RUN mkdir -p /config && chown steam:steam /config
+RUN su - steam
 
 COPY init.sh /
 COPY --chown=steam:steam *.ini run.sh /home/steam/

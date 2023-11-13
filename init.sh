@@ -74,4 +74,4 @@ else
 fi
 
 chown -R "$PUID":"$PGID" /config /home/steam /tmp/dumps
-exec gosu "$USER" "/home/steam/run.sh" "$@"
+exec "/home/steam/run.sh" "$@"
